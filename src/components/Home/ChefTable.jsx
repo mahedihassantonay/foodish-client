@@ -5,7 +5,7 @@ import { FaThumbsUp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const ChefTable = ({ cd }) => {
-  const { name, image, years_of_experience, number_of_recipes, likes } = cd;
+  const { name, image, years_of_experience, number_of_recipes, likes,id } = cd;
   return (
     <div>
       <div className="card lg:card-side backdrop-opacity-30 backdrop-invert bg-white/90 shadow-xl p-12">
@@ -22,7 +22,7 @@ const ChefTable = ({ cd }) => {
           <p className="text-lg p-4 font-semibold">Numbers of recipes: {number_of_recipes}</p>
           <p className="text-lg p-4 font-semibold inline-flex gap-2 items-center"><FaThumbsUp></FaThumbsUp> {likes}</p>
           <div className="p-4">
-            <Link to='/recipe'><button className="btn normal-case">View Recipes</button></Link>
+            <Link to={`/chefsData/${id}`}><button className="btn normal-case">View Recipes</button></Link>
           </div>
         </div>
       </div>

@@ -38,7 +38,7 @@ const Footer = () => {
       </div>
 
       <hr />
-      <p className="text-gray-500">
+      <p className="text-gray-500 text-center">
         <small>© 2020 Copyright Fooden. All Rights Reserved.</small>
       </p>
     </div>
