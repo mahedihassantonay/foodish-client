@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { FaThumbsUp } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const ChefTable = ({ cd }) => {
   const { name, image, years_of_experience, number_of_recipes, likes } = cd;
@@ -12,7 +13,7 @@ const ChefTable = ({ cd }) => {
           <img
             src={image}
             alt="Album"
-            className="w-96 h-96"
+            className="w-96 h-96 hover:opacity-50"
           />
         </figure>
         <div className="card-body p-16">
@@ -21,7 +22,7 @@ const ChefTable = ({ cd }) => {
           <p className="text-lg p-4 font-semibold">Numbers of recipes: {number_of_recipes}</p>
           <p className="text-lg p-4 font-semibold inline-flex gap-2 items-center"><FaThumbsUp></FaThumbsUp> {likes}</p>
           <div className="p-4">
-            <button className="btn normal-case">View Recipes</button>
+            <Link to='/recipe'><button className="btn normal-case">View Recipes</button></Link>
           </div>
         </div>
       </div>

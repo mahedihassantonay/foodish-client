@@ -5,6 +5,7 @@ import { useLoaderData } from 'react-router-dom';
 import Banner from './Banner';
 import ChefTable from './chefTable';
 import OrderPlan from './OrderPlan';
+import Review from './Review';
 
 const Home = () => {
     const chefsData = useLoaderData();
@@ -24,6 +25,7 @@ const Home = () => {
          </div>
          </div>
          <OrderPlan />
+         <Review />
         </>
     );
 };
