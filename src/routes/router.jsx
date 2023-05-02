@@ -13,7 +13,8 @@ import Main from "../layout/Main";
             children: [
                 {
                     path: '/',
-                    element: <Home />
+                    element: <Home />,
+                    loader: ()=> fetch('http://localhost:5000/chefsData')
                     
                 },
                 {
