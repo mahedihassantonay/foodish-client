@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import banner from '../../../public/assets/banner.jpg'
+import banner from '../../assets/banner.jpg'
 
 
 const Banner = () => {

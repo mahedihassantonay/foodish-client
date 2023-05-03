@@ -6,11 +6,13 @@ import Header from '../components/Home/Header';
 
 const Main = () => {
     return (
-        <>
+        <div className='min-h-screen flex flex-col'>
             <Header />
             <Outlet />
+            <div className='mt-auto'>
             <Footer />
-        </>
+            </div>
+        </div>
     );
 };
 

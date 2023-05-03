@@ -1,11 +1,19 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import logo from  '../../../public/assets/logo.png'
+import logo from  '../../assets/logo.png'
+import { AuthContext } from "../../contexts/AuthProvider";
 
 
 
 const Header = () => {
+  const {user, logOut} = useContext(AuthContext)
+
+  const handleLogOut=()=>{
+    logOut().then().catch((error) => {
+      console.log(error)
+    })
+  }
   return (
     <div className="bg-gray-800 sticky top-0 z-10">
       <div className="container mx-auto flex items-center justify-between text-white">
@@ -14,7 +22,17 @@ const Header = () => {
             <Link to='/'>Home</Link>
             <Link to='/blog'>Blog</Link>
         </ul>
-        <button className="btn normal-case">Login</button>
+        <div className="flex gap-4">
+          <img className={`rounded-full h-12 hover:{user?.displayName}`} src={user?.photoURL} alt="" />
+        
+       { user?.email ? <div>
+        <button onClick={handleLogOut} className="btn normal-case">LogOut</button>
+      </div> :  <Link to='/login'><button className="btn normal-case">Login</button></Link>
+       }
+       </div>
+        
+
+       
       </div>
     </div>
     

@@ -39,7 +39,7 @@ const Footer = () => {
 
       <hr />
       <p className="text-gray-500 text-center">
-        <small>© 2020 Copyright Fooden. All Rights Reserved.</small>
+        <small>© 2020 Copyright Foodish. All Rights Reserved.</small>
       </p>
     </div>
   );
