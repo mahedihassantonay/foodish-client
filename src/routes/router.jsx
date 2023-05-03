@@ -10,6 +10,7 @@ import RequireRoute from "../components/Auth/RequireRoute";
 import Home from "../components/Home/Home";
 import Blog from "../components/Pages/Blog";
 import ChefRecipe from "../components/Pages/ChefRecipe";
+import ErrorPage from "../components/Pages/ErrorPage";
 
 import Main from "../layout/Main";
 
@@ -17,6 +18,7 @@ import Main from "../layout/Main";
         {
             path: '/',
             element: <Main />,
+            errorElement:<ErrorPage />,
             children: [
                 {
                     path: '/',
