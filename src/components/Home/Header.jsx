@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from  '../../assets/logo.png'
 import { AuthContext } from "../../contexts/AuthProvider";
 
@@ -19,8 +19,16 @@ const Header = () => {
       <div className="container mx-auto flex items-center justify-between text-white">
         <img className="h-16" src={logo} />
         <ul className="font-semibold flex gap-8">
-            <Link to='/'>Home</Link>
-            <Link to='/blog'>Blog</Link>
+            <NavLink 
+            to='/'
+            className={({isActive})=>(isActive ? 'border border-x-0' : '' )}
+            >Home
+            </NavLink>
+            <NavLink 
+            to='/blog'
+            className={({isActive})=>(isActive ? 'border border-x-0' : '' )}
+            >Blog
+            </NavLink>
         </ul>
         <div className="flex gap-4 items-center">
         {user?.photoURL ? <img className="rounded-full h-12"  src={user?.photoURL} alt="" title={user?.displayName}/> : <span>{user?.email}</span>}
