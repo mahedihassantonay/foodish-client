@@ -22,10 +22,10 @@ const Header = () => {
             <Link to='/'>Home</Link>
             <Link to='/blog'>Blog</Link>
         </ul>
-        <div className="flex gap-4">
-          <img className="rounded-full h-12"  src={user?.photoURL} alt="" title={user?.displayName}/>
+        <div className="flex gap-4 items-center">
+        {user?.photoURL ? <img className="rounded-full h-12"  src={user?.photoURL} alt="" title={user?.displayName}/> : <span>{user?.email}</span>}
         
-       { user?.email ? <div>
+       { user ? <div>
         <button onClick={handleLogOut} className="btn normal-case">LogOut</button>
       </div> :  <Link to='/login'><button className="btn normal-case">Login</button></Link>
        }

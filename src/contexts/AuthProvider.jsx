@@ -1,9 +1,11 @@
+/* eslint-disable no-undef */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { createContext, useEffect, useState } from 'react';
-import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword, updateProfile, GoogleAuthProvider, signInWithPopup, GithubAuthProvider } from "firebase/auth";
 import app from '../firebase/firebaseConfig'
-import { setLogLevel } from 'firebase/app';
+
+
 
 export const AuthContext = createContext(null)
 
@@ -13,6 +15,15 @@ const auth = getAuth(app);
 const AuthProvider = ({children}) => {
     const [user,setUser] = useState('')
     const [loading, setLoading] = useState(true)
+    const googleProvider = new GoogleAuthProvider();
+    const gitProvider = new GithubAuthProvider();
+
+    const googleSignIn = () =>{
+        return signInWithPopup(auth, googleProvider)
+    } 
+    const gitHubSignIn = () =>{
+        return signInWithPopup(auth, gitProvider)
+    } 
 
     const registerUser = (email,password) =>{
         setLoading(true)
@@ -52,7 +63,7 @@ const AuthProvider = ({children}) => {
             unSubscribe();
         }
     },[])
-    const authInfo = {registerUser, user, updateUserProfile, logOut, logInUser, loading };
+    const authInfo = {registerUser, user, updateUserProfile, logOut, logInUser, loading, googleSignIn, gitHubSignIn };
 
     return (
         <AuthContext.Provider value={authInfo}>
