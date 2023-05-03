@@ -14,7 +14,8 @@ import "@smastrom/react-rating/style.css";
 
 const ChefRecipe = () => {
   const chefDetails = useLoaderData();
-  const [favourite, setFavourite] = useState(false)
+  // const [favourite, setFavourite] = useState(false)
+  const [favourite, setFavourite] = useState([]); 
   const {
     name,
     image,
@@ -27,9 +28,14 @@ const ChefRecipe = () => {
     
   } = chefDetails;
 
-  const handleFavourite = ()=>{
+  const handleFavourite = (id)=>{
+    // toast('your favourite recipe is added')
+    // setFavourite(true)
+    // const updatedFavourites = [...favourite, id];
+    // updatedFavourites[index] = true;
+    setFavourite([...favourite, id]);
     toast('your favourite recipe is added')
-    setFavourite(true)
+
   }
   return (
     <>
@@ -100,7 +106,7 @@ const ChefRecipe = () => {
                     </p>
                   </div>
                   <div className="mt-auto text-center">
-                    <button onClick={handleFavourite} disabled={favourite} className="btn normal-case">
+                    <button onClick={()=>handleFavourite(r.id)} disabled={favourite.includes(r.id)} className="btn normal-case">
                       <FaRegHeart></FaRegHeart>{" "}
                       <span className="pl-1">Favourite</span>
                     </button>
