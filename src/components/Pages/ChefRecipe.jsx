@@ -1,7 +1,8 @@
+/* eslint-disable no-undef */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/jsx-key */
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { FaThumbsUp } from "react-icons/fa";
 import { Rating } from "@smastrom/react-rating";
@@ -11,6 +12,7 @@ import "@smastrom/react-rating/style.css";
 
 const ChefRecipe = () => {
   const chefDetails = useLoaderData();
+  const [favourite, setFavourite] = useState(false)
   const {
     name,
     image,
@@ -20,8 +22,12 @@ const ChefRecipe = () => {
     likes,
     recipes,
     cooking_method,
-    rating,
+    
   } = chefDetails;
+
+  const handleFavourite = ()=>{
+    setFavourite(true)
+  }
   return (
     <>
       <div className="bg-gray-800  pb-16">
@@ -91,7 +97,7 @@ const ChefRecipe = () => {
                     </p>
                   </div>
                   <div className="mt-auto text-center">
-                    <button className="btn normal-case">
+                    <button onClick={handleFavourite} disabled={favourite} className="btn normal-case">
                       <FaRegHeart></FaRegHeart>{" "}
                       <span className="pl-1">Favourite</span>
                     </button>

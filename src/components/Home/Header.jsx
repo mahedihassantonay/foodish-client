@@ -23,7 +23,7 @@ const Header = () => {
             <Link to='/blog'>Blog</Link>
         </ul>
         <div className="flex gap-4">
-          <img className={`rounded-full h-12 hover:{user?.displayName}`} src={user?.photoURL} alt="" />
+          <img className="rounded-full h-12"  src={user?.photoURL} alt="" title={user?.displayName}/>
         
        { user?.email ? <div>
         <button onClick={handleLogOut} className="btn normal-case">LogOut</button>
