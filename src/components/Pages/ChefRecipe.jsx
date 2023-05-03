@@ -7,6 +7,8 @@ import { Link, useLoaderData } from "react-router-dom";
 import { FaThumbsUp } from "react-icons/fa";
 import { Rating } from "@smastrom/react-rating";
 import { FaRegHeart } from "react-icons/fa";
+import {  toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 import "@smastrom/react-rating/style.css";
 
@@ -26,6 +28,7 @@ const ChefRecipe = () => {
   } = chefDetails;
 
   const handleFavourite = ()=>{
+    toast('your favourite recipe is added')
     setFavourite(true)
   }
   return (
