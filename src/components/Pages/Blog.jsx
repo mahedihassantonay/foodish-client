@@ -3,6 +3,8 @@
 /* eslint-disable no-unused-vars */
 import React, { useRef } from 'react';
 import ReactToPdf from 'react-to-pdf';
+import { FaFilePdf } from "react-icons/fa";
+
 
 
 
@@ -76,7 +78,7 @@ const Blog = () => {
       {/* pdf button */}
         <div className='text-center py-8'>
         <ReactToPdf className='px-8' targetRef={ref} filename="blog.pdf">
-          {({ toPdf }) => <button className='btn' onClick={toPdf}>Generate pdf</button>}
+          {({ toPdf }) => <button className='btn' onClick={toPdf}><FaFilePdf className='mr-1'></FaFilePdf> Generate pdf</button>}
         </ReactToPdf>
         </div>
       </div>

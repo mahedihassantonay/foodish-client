@@ -2,7 +2,9 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { FaThumbsUp } from "react-icons/fa";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const ChefTable = ({ cd }) => {
   const { name, image, years_of_experience, number_of_recipes, likes,id } = cd;
@@ -10,7 +12,10 @@ const ChefTable = ({ cd }) => {
     <div>
       <div className="card lg:card-side backdrop-opacity-30 backdrop-invert bg-white/90 shadow-xl p-12">
         <figure>
-          <img
+          <LazyLoadImage
+          
+          
+          effect="blur"
             src={image}
             alt="Album"
             className="w-96 h-96 hover:opacity-50"
