@@ -2,6 +2,11 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { FaFileInvoiceDollar, FaWaze, FaMotorcycle } from "react-icons/fa";
+import deliverOrder from '../../assets/delivery.json'
+import Lottie from "lottie-react";
+import order from '../../assets/order.json'
+import mealTime from '../../assets/mealTime.json'
+
 
 const OrderPlan = () => {
   return (
@@ -9,8 +14,8 @@ const OrderPlan = () => {
       <h1 className="text-center text-4xl font-bold">How it works</h1>
       <div className="flex gap-8">
         <div className="text-center p-12">
-          <FaFileInvoiceDollar className="mx-auto w-12 h-12"></FaFileInvoiceDollar>
-          <h1 className="text-2xl font-bold p-4">Your Order</h1>
+        <Lottie className="mx-auto h-32" animationData={order} loop={true} />;
+          <h1 className="text-2xl font-bold pb-2">Order</h1>
           <p className="text-gray-400">
             Order process involves selecting items, entering shipping/payment
             information and confirmation before the order is processed and
@@ -18,8 +23,8 @@ const OrderPlan = () => {
           </p>
         </div>
         <div className="text-center p-12">
-          <FaMotorcycle className="mx-auto w-12 h-12"></FaMotorcycle>
-          <h1 className="text-2xl font-bold p-4" >We Cook & Deliver</h1>
+        <Lottie className="mx-auto  h-32" animationData={deliverOrder} loop={true} />;
+          <h1 className="text-2xl font-bold pb-2" >We Cook & Deliver</h1>
           <p className="text-gray-400">
             We cook and deliver refers to a service where meals are prepared by
             a chef or catering service and then delivered directly to the
@@ -27,8 +32,8 @@ const OrderPlan = () => {
           </p>
         </div>
         <div className="text-center p-12">
-          <FaWaze className="mx-auto w-12 h-12"></FaWaze>
-          <h1 className="text-2xl font-bold p-4">Enjoy MealTime</h1>
+        <Lottie className="mx-auto  h-44" animationData={mealTime} loop={true} />;
+          <h1 className="text-2xl font-bold pb-2 -mt-12">Enjoy MealTime</h1>
           <p className="text-gray-400">
             The experience of dining has improved, perhaps through better food
             quality, presentation, or company, leading to a renewed appreciation

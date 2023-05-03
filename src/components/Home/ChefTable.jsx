@@ -12,6 +12,7 @@ const ChefTable = ({ cd }) => {
     <div>
       <div className="card lg:card-side backdrop-opacity-30 backdrop-invert bg-white/90 shadow-xl p-12">
         <figure>
+          {/* LazyLoading */}
           <LazyLoadImage
           
           

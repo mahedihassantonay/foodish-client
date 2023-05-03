@@ -8,6 +8,8 @@ import OrderPlan from "./OrderPlan";
 import Review from "./Review";
 import LazyLoad from "react-lazyload";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import Lottie from "lottie-react";
+import chef from '../../assets/chef.json'
 
 const Home = () => {
   const chefsData = useLoaderData();
@@ -16,7 +18,7 @@ const Home = () => {
     <>
       <Banner />
       <div className="mt-24 ">
-        <h1 className="text-center text-4xl font-bold pb-16">Meet Our Chefs</h1>
+        <h1 className="text-center text-4xl font-bold pb-16 flex justify-center items-center">Meet Our <Lottie className="h-28" animationData={chef} loop={true} />;</h1>
         <div className="grid grid-cols-2 gap-8 p-2">
           {chefsData.map((cd) => (
             
