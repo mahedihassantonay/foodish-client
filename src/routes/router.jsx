@@ -9,8 +9,9 @@ import RequireRoute from "../components/Auth/RequireRoute";
 
 import Home from "../components/Home/Home";
 import Blog from "../components/Pages/Blog";
-import ChefRecipe from "../components/Pages/ChefRecipe";
+
 import ErrorPage from "../components/Pages/ErrorPage";
+import Recipes from "../components/Pages/Recipes";
 
 import Main from "../layout/Main";
 
@@ -28,7 +29,7 @@ import Main from "../layout/Main";
                 },
                 {
                     path: 'chefsData/:id',
-                    element: <RequireRoute><ChefRecipe /></RequireRoute>,
+                    element: <RequireRoute><Recipes /></RequireRoute>,
                     loader: ({params})=> fetch(`http://localhost:5000/chefsData/${params.id}`)
                     
                 },

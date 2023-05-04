@@ -12,7 +12,7 @@ const OrderPlan = () => {
   return (
     <div className="mt-24 container mx-auto">
       <h1 className="text-center text-4xl font-bold">How it works</h1>
-      <div className="flex gap-8">
+      <div className="lg:flex gap-8">
         <div className="text-center p-12">
         <Lottie className="mx-auto h-32" animationData={order} loop={true} />;
           <h1 className="text-2xl font-bold pb-2">Order</h1>

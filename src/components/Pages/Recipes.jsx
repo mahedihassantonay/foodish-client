@@ -12,7 +12,7 @@ import {  toast } from 'react-toastify';
 
 import "@smastrom/react-rating/style.css";
 
-const ChefRecipe = () => {
+const Recipes = () => {
   const chefDetails = useLoaderData();
   // const [favourite, setFavourite] = useState(false)
   const [favourite, setFavourite] = useState([]); 
@@ -40,8 +40,8 @@ const ChefRecipe = () => {
   return (
     <>
       <div className="bg-gray-800  pb-16">
-        <div className="container mx-auto flex justify-between bg-gradient-to-r from-gray-700 to-stone-500 mb-8 h-96 rounded ">
-          <div className="text-white lg:py-12 lg:px-32 tracking-widest">
+        <div className="container mx-auto md:flex justify-between bg-gradient-to-r from-gray-700 to-stone-500 mb-8 md:h-96 rounded ">
+          <div className="text-white md:py-12 lg:px-32 tracking-widest p-2">
             <h3 className="font-semibold text-xl">Name: {name} </h3> <br />
             <p className="text-gray-300">
               <span className="font-semibold">About Chef:</span> {short_bio}{" "}
@@ -69,7 +69,7 @@ const ChefRecipe = () => {
           </h1>
           <div className="container mx-auto flex flex-col gap-8">
             {recipes.map((r) => (
-              <div key={r.id} className="card card-side bg-base-100 shadow-xl">
+              <div key={r.id} className="card flex flex-col lg:flex-row card-side bg-base-100 shadow-xl">
                 <figure>
                   <img
                     src={r.image}
@@ -126,4 +126,4 @@ const ChefRecipe = () => {
   );
 };
 
-export default ChefRecipe;
+export default Recipes;

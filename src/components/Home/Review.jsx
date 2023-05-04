@@ -6,7 +6,7 @@ const Review = () => {
     return (
         <div className="mt-24 container mx-auto mb-12">
       <h1 className="text-center text-4xl font-bold">What people say</h1>
-      <div className='flex gap-8 p-8'>
+      <div className='md:flex gap-8 p-8'>
         <div className='text-center'>
             <p className='text-gray-400 pb-3'>"The pasta was cooked perfectly and the sauce had a great balance of flavors. Will be back for more!"</p>
             <img className='rounded-full w-16 mx-auto' src="https://randomuser.me/api/portraits/men/82.jpg" alt="" />

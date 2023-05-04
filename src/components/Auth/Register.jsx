@@ -1,11 +1,12 @@
 /* eslint-disable no-unused-vars */
 import { Result } from "postcss";
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 
 const Register = () => {
   const { registerUser, updateUserProfile } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const [name, setName] = useState("");
   const [photoUrl, setPhotoUrl] = useState("");
@@ -26,6 +27,7 @@ const Register = () => {
       registerUser(email, password)
         .then((result) => {
           console.log(result.user);
+          navigate("/login");
           updateUserProfile(result.user, name, photoUrl);
         })
         .catch((error) => {
