@@ -1,5 +1,5 @@
 
-Site URL: 
+Site URL: https://chef-recipe-hunter-700c2.web.app/
 
 #Bullet points-
 -this project is made based on a cusine type restaurant

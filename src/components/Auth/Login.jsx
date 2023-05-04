@@ -13,7 +13,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-// Login section
+  // Login section
   const handleLogin = (e) => {
     e.preventDefault();
     if ((email, password)) {
@@ -30,7 +30,7 @@ const Login = () => {
     }
   };
 
-//   google sign in
+  //   google sign in
   const handleGoogleSignIn = (e) => {
     e.preventDefault();
     console.log("google sign in");
@@ -44,8 +44,8 @@ const Login = () => {
       });
   };
 
-// Github sign in
-const handleGitHubSignIn = (e) => {
+  // Github sign in
+  const handleGitHubSignIn = (e) => {
     e.preventDefault();
     console.log("gihub sign in");
     gitHubSignIn()
@@ -57,8 +57,6 @@ const handleGitHubSignIn = (e) => {
         console.log(error.message);
       });
   };
-
-
 
   return (
     <>
@@ -111,7 +109,7 @@ const handleGitHubSignIn = (e) => {
                 <button className="btn">Login</button>
                 <div>
                   <h1 className="text-center font-bold py-4">Or login with </h1>
-                  <span className="flex justify-center gap-4">
+                  <span className="flex md:flex-row flex-col justify-center gap-4">
                     <button
                       onClick={handleGoogleSignIn}
                       className="btn btn-outline normal-case"
@@ -119,7 +117,10 @@ const handleGitHubSignIn = (e) => {
                       <FaGooglePlusSquare className="mr-1"></FaGooglePlusSquare>{" "}
                       Google
                     </button>
-                    <button onClick={handleGitHubSignIn} className="btn btn-outline normal-case">
+                    <button
+                      onClick={handleGitHubSignIn}
+                      className="btn btn-outline normal-case"
+                    >
                       <FaGithub className="mr-1"></FaGithub> GitHub
                     </button>
                   </span>
@@ -127,7 +128,7 @@ const handleGitHubSignIn = (e) => {
               </div>
               <p>
                 <small>
-                  New to this page?{" "}
+                  New to this page?
                   <Link className="text-blue-800 underline" to="/register">
                     create an account here
                   </Link>

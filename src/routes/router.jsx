@@ -24,13 +24,13 @@ import Main from "../layout/Main";
                 {
                     path: '/',
                     element: <Home />,
-                    loader: ()=> fetch('http://localhost:5000/chefsData')
+                    loader: ()=> fetch('https://chef-hunter-recipe-mahedihassantonay.vercel.app/chefsData')
                     
                 },
                 {
                     path: 'chefsData/:id',
                     element: <RequireRoute><Recipes /></RequireRoute>,
-                    loader: ({params})=> fetch(`http://localhost:5000/chefsData/${params.id}`)
+                    loader: ({params})=> fetch(`https://chef-hunter-recipe-mahedihassantonay.vercel.app/chefsData/${params.id}`)
                     
                 },
                 {

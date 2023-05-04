@@ -6,7 +6,7 @@ import banner from '../../assets/banner.jpg'
 const Banner = () => {
     return (
        <>
-        <div className="w-full h-screen relative -mb-72 sm:-mb-96 lg:mb-0">
+        <div className="w-full  h-screen relative">
             
             <img className='object-fit w-full lg:h-screen' src={banner} alt="" />
            

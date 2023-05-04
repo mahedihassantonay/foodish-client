@@ -17,9 +17,9 @@ const Home = () => {
   return (
     <>
       <Banner />
-      <div className="lg:mt-24 md:mt-4 sm:-mt-24 -mt-60">
-        <h1 className="text-center text-4xl font-bold pb-16 flex justify-center items-center pt-8">Meet Our <Lottie className="h-28" animationData={chef} loop={true} />;</h1>
-        <div className="grid xl:grid-cols-2 gap-8 xl:p-4">
+      <div className="container mx-auto -mt-96 md:-mt-0">
+        <h1 className="text-center text-4xl font-bold pb-16 flex justify-center items-center md:pt-8">Meet Our <Lottie className="h-28" animationData={chef} loop={true} />;</h1>
+        <div className="grid xl:grid-cols-2 gap-8 xl:p-4 ">
           {chefsData.map((cd) => (
             
               <ChefTable key={cd.id} cd={cd}></ChefTable>

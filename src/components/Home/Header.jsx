@@ -16,9 +16,9 @@ const Header = () => {
   }
   return (
     <div className="bg-gray-800 sticky top-0 z-10">
-      <div className="container mx-auto flex items-center justify-between text-white">
-        <img className="h-16" src={logo} />
-        <ul className="font-semibold flex gap-8">
+      <div className="container mx-auto  flex items-center justify-between text-white">
+        <img className="md:h-16 h-8" src={logo} />
+        <ul className="font-semibold flex gap-8 md:text-base text-xs">
             <NavLink 
             to='/'
             className={({isActive})=>(isActive ? 'border border-x-0' : '' )}
@@ -31,11 +31,11 @@ const Header = () => {
             </NavLink>
         </ul>
         <div className="flex gap-4 items-center">
-        {user?.photoURL ? <img className="rounded-full h-12"  src={user?.photoURL} alt="" title={user?.displayName}/> : <span>{user?.email}</span>}
+        {user?.photoURL ? <img className="rounded-full md:h-12 h-8"  src={user?.photoURL} alt="" title={user?.displayName}/> : <span>{user?.email}</span>}
         
        { user ? <div>
-        <button onClick={handleLogOut} className="btn normal-case">LogOut</button>
-      </div> :  <Link to='/login'><button className="btn normal-case">Login</button></Link>
+        <button onClick={handleLogOut} className="btn normal-case p-1 md:p-4">LogOut</button>
+      </div> :  <Link to='/login'><button className="btn normal-case p-1 md:p-4">Login</button></Link>
        }
        </div>
         

@@ -10,7 +10,7 @@ const ChefTable = ({ cd }) => {
   const { name, image, years_of_experience, number_of_recipes, likes,id } = cd;
   return (
     <>
-      <div className="card md:card-side backdrop-opacity-30 backdrop-invert bg-white/90 shadow-xl p-12">
+      <div className="card md:card-side backdrop-opacity-30 backdrop-invert bg-white/90 shadow-xl md:p-12">
         <figure>
           {/* LazyLoading */}
           <LazyLoadImage
@@ -19,7 +19,7 @@ const ChefTable = ({ cd }) => {
           effect="blur"
             src={image}
             alt="Album"
-            className="w-96 h-full hover:opacity-50"
+            className="md:w-96 h-full"
           />
         </figure>
         <div className="card-body md::p-16">
